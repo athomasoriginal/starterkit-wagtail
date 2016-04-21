@@ -159,6 +159,6 @@ python ${repo_dir}/src/server/manage.py migrate
 #-------------------------------------------------------------
 # createsuperuser
 logit "creating project superuser"
-expect $repo_dir/tools/vagrant/expects/set_admin.exp ${vm_user} ${repo_name} ${repo_dir} ${django_user} {{cookiecutter.author_email}} ${django_pass}
+expect $repo_dir/tools/vagrant/expects/set_admin.exp ${vm_user} ${repo_name} ${repo_dir} ${django_user} {{cookiecutter.email}} ${django_pass}
 
 logit "provisioning complete"
