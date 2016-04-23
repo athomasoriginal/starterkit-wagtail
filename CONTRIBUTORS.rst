@@ -28,7 +28,7 @@ Special Thanks
 ~~~~~~~~~~~~~~
 
 While the following were not directly involved in this project, they are a huge part
-of the inspiration for this project.
+of the inspiration.
 
 `pydanny`_
 `audreyr`_.
