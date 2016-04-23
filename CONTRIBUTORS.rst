@@ -11,7 +11,6 @@ and are able to accept and merge pull requests.
 Name                        Github        Twitter
 =========================== ============= ============
 Thomas Mattacchione         `@tkjone`_    @tkjone
-Audrey Roy Greenfeld        `@audreyr`_   @audreyr
 =========================== ============= ============
 
 Other Contributors
