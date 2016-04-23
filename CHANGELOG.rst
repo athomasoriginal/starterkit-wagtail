@@ -4,6 +4,14 @@ Change Log
 
 All enhancements and patches to cookiecutter-django will be documented in this file. This project adheres to `Semantic Versioning`_.
 
+[2016-04-23]
+============
+
+**Changed**
+
+* @audreyr resolved issue with provisioning script:  ``author_email`` to ``emal``.  Thank you!
+* updated CONTRIBUTORS.rst
+
 [2016-03-29]
 ============
 
