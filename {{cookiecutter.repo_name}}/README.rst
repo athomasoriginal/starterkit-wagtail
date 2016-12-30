@@ -13,8 +13,6 @@ Please make sure you have the following installed on your local development envi
 
 * `vagrant`_
 * `virtualbox`_
-* `node`_
-* `gulp`_
 
 Click the above links to install the required packages.  When you install ``gulp``, make sure you install it globally.  Further, I also recommend installing ``node`` via `NVM`_.
 
