@@ -4,6 +4,11 @@ Wagtail Starter Kit
 
 Welcome to Wagtail Starter Kit, a cookiecutter template for Django Projects.
 
+Warning
+=======
+
+This branch is being actively refactored.  It will fail if you try to build and use using the instructions listed below.
+
 Overview
 ========
 
