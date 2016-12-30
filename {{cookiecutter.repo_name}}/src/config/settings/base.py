@@ -59,6 +59,7 @@ THIRD_PARTY_APPS = (
     'wagtail.wagtailforms',
     'wagtail.contrib.wagtailapi',
     'rest_framework',
+    'wagtail.wagtailembeds',
 )
 
 LOCAL_APPS = (
@@ -167,7 +168,7 @@ TEMPLATES = [
 # STATIC FILE CONFIGURATION
 # ------------------------------------------------------------------------------
 
-STATIC_ROOT = env('STATIC_ROOT', default=str(APP_DIR.path('server/staticfiles')))
+STATIC_ROOT = env('STATIC_ROOT', default=str(APP_DIR.path('static')))
 
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 STATIC_URL = env('STATIC_URL', default='/build/')
