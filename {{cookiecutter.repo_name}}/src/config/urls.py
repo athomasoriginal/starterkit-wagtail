@@ -60,5 +60,6 @@ urlpatterns = [
     # www.example.com/robots.txt
     url(
         regex=r'^robots.txt$',
-        view=lambda r: HttpResponse("User-agent: *\nDisallow: /", content_type="text/plain")),
+        view=lambda r: HttpResponse("User-agent: *\nDisallow: /",
+                                    content_type="text/plain")),
 ]
