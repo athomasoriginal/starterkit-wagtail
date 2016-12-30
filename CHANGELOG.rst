@@ -4,6 +4,19 @@ Change Log
 
 All enhancements and patches to cookiecutter-django will be documented in this file. This project adheres to `Semantic Versioning`_.
 
+[2016-12-29]
+============
+
+**Changed**
+
+* front end tooling removed.  promotes a greater seperation of concerns.  As a result of this change, we have updated the following concerns:
+
+  - documentation - removed the ``client`` and ``server``.  We only need the ``README.rst`` at this point.
+  -
+
+* django updated to 1.10.x
+* wagtail updated to 1.8.x
+
 [2016-04-23]
 ============
 
