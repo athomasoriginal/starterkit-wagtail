@@ -13,6 +13,8 @@ All enhancements and patches to cookiecutter-django will be documented in this f
 
   - documentation - removed the ``client`` and ``server``.  We only need the ``README.rst`` at this point.
   - logs - removed the ``server`` subdirectory.  there should only be server logs here now.
+  - src - moved everything in server up one directory.  It is now implicit that everything in src is server related
+  -
 
 * django updated to 1.10.x
 * wagtail updated to 1.8.x
