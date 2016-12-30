@@ -2,7 +2,7 @@
 -r base.txt
 
 # test tools
-django-extensions>=1.6.1
+django-extensions>=1.7.5
 django-nose>=1.4.2
 coverage>=4.0.3
 
