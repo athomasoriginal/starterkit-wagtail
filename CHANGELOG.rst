@@ -12,7 +12,7 @@ All enhancements and patches to cookiecutter-django will be documented in this f
 * front end tooling removed.  promotes a greater seperation of concerns.  As a result of this change, we have updated the following concerns:
 
   - documentation - removed the ``client`` and ``server``.  We only need the ``README.rst`` at this point.
-  -
+  - logs - removed the ``server`` subdirectory.  there should only be server logs here now.
 
 * django updated to 1.10.x
 * wagtail updated to 1.8.x
