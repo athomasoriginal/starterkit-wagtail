@@ -77,6 +77,8 @@ The `wagtail starter kit` provides you with the following feature set:
 
     The provisioning scripts will provide you with two virtualenvironments.  One uses Python 2 and the other uses Python 3.  No configuration required, no changes to the Ubuntu default version of Python, just switch between one or the other using virtualenvwrapper's `workon` command
 
+    We also provide a ``dev`` environment and a ``qa`` environment out-of-the-box.  This enables a better simulation of different development flows and can be a good training tool for other developers.
+
 * 12 Factor App
 
     Project is inspired by `12 factor app`_ which means it comes configured to use environment variables, database connection strings and other methodologies outlined in the 12 Factor manifesto.  Each one has defaults, which means you don't have to setup a `.env` or export variables to start development work.

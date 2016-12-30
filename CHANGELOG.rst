@@ -21,6 +21,8 @@ All enhancements and patches to cookiecutter-django will be documented in this f
   - ``gulpfile.js`` - removed
   - ``package.json`` - removed
 
+* vagrant setup - vagrant environment updated to Ubuntu 16.04
+* vagrant setup - configured with two potential environments:  ``dev`` and ``qa``.
 * django updated to 1.10.x
 * wagtail updated to 1.8.x
 

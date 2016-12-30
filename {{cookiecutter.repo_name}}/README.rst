@@ -63,6 +63,11 @@ If things went as expected your browser should automatically open and direct you
 
 For more information on this project, please head over to the docs.
 
+Vagrant Environments
+====================
+
+There are two vagrant environments provided:  ``dev`` and ``qa``.  ``qa`` is meant to more closely simulate your deploy process and really enhances the confidence of the development team by providing an alternate environment to test in.
+
 Gotchas
 =======
 
