@@ -1,5 +1,8 @@
 Vagrant.configure(2) do |config|
 
+    #-------------------------------------------------------------
+    # development
+    #-------------------------------------------------------------
     config.vm.define "dev" do |dev|
         # vagrant box
         dev.vm.box = "ubuntu/xenial64"
@@ -22,6 +25,9 @@ Vagrant.configure(2) do |config|
             privileged: false
     end
 
+    #-------------------------------------------------------------
+    # qa
+    #-------------------------------------------------------------
     config.vm.define "qa", autostart: false do |qa|
        # vagrant box
        dev.vm.box = "ubuntu/xenial64"
