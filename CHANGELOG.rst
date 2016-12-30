@@ -11,10 +11,15 @@ All enhancements and patches to cookiecutter-django will be documented in this f
 
 * front end tooling removed.  promotes a greater seperation of concerns.  As a result of this change, we have updated the following concerns:
 
-  - documentation - removed the ``client`` and ``server``.  We only need the ``README.rst`` at this point.
-  - logs - removed the ``server`` subdirectory.  there should only be server logs here now.
-  - src - moved everything in server up one directory.  It is now implicit that everything in src is server related
-  - src - removed the static directory
+  - ``docs`` - removed the ``client`` and ``server``.  We only need the ``README.rst`` at this point.
+  - ``logs`` - removed the ``server`` subdirectory.  there should only be server logs here now.
+  - ``src`` - moved everything in server up one directory.  It is now implicit that everything in src is server related
+  - ``src`` - removed the static directory
+  - ``tools`` - the tools directory has been removed.  It only contained client side setups.
+  - ``tools`` - removed the ``configs`` directory - front end related
+  - ``tools`` - removed the ``tasks`` directory - front end related
+  - ``gulpfile.js`` - removed
+  - ``package.json`` - removed
 
 * django updated to 1.10.x
 * wagtail updated to 1.8.x
