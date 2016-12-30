@@ -2,5 +2,5 @@
 omit = ../*migrations*
 
 [html]
-directory = ashleylocom/tests/report
-title = ashleylocom report
+directory = {{cookiecutter.repo_name}}/tests/report
+title = {{cookiecutter.repo_name}} report
