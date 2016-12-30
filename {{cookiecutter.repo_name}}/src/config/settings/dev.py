@@ -50,7 +50,8 @@ INSTALLED_APPS += ('django_nose', )
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 
 # running tests will also run coverage + only include the apps listed below.
-# inclusive will scan all files in working dir to see which are not being covered
+# inclusive will scan all files in working dir to see which are not being
+# covered
 NOSE_ARGS = [
     '--verbosity=2',
     '--with-coverage',

@@ -13,7 +13,7 @@ from __future__ import absolute_import, unicode_literals
 
 import environ
 
-ROOT_DIR = environ.Path(__file__) - 5  # (/a/b/myfile.py - 5 = /)
+ROOT_DIR = environ.Path(__file__) - 4  # (../../../.. = /)
 APP_DIR = ROOT_DIR.path('src')
 
 

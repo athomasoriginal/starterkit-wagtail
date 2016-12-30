@@ -24,7 +24,8 @@ STATIC_ROOT = env("STATIC_ROOT")
 # SITE CONFIGURATION
 # ------------------------------------------------------------------------------
 
-ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['{{cookiecutter.domain_name}}'])
+ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS',
+                         default=['{{cookiecutter.domain_name}}'])
 
 # ------------------------------------------------------------------------------
 # LOGGING CONFIGURATION
