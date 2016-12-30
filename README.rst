@@ -110,6 +110,12 @@ The `wagtail starter kit` provides you with the following feature set:
 
 .. _12 factor app: http://12factor.net/
 
+
+Note on Branches
+================
+
+Currently there are two branches:  ``master`` and ``development``.  The ``master`` branch has not seen updates in about 8 months and also takes on a more traditional approach to working with wagtail.  The ``development`` branch will see many of the Django dependencies updated.  In addition, I have configured it with a more experimental approach to web development.  This means that the wagtail server will act more as an API and React will render everything on the backend.
+
 Constraints
 ===========
 
