@@ -7,4 +7,4 @@ django-nose>=1.4.2
 coverage>=4.3.1
 
 # debug tools
-django-debug-toolbar>=1.4
+django-debug-toolbar>=1.6
