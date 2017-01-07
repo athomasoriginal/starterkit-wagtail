@@ -11,6 +11,7 @@ All enhancements and patches to cookiecutter-django will be documented in this f
 **Changed**
 
 * vagrant box - moved from ``Ubuntu/xenial64`` to ``geerlingguy/ubuntu1604``
+* settings files - tweaked the settings files to better accomodate backend focused setup
 
 [2016-12-29]
 ============

@@ -21,7 +21,9 @@ TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
 # ------------------------------------------------------------------------------
 # DJANGO DEBUG TOOLBAR
 # ------------------------------------------------------------------------------
-# https://django-debug-toolbar.readthedocs.org/en/1.3.2/
+# http://django-debug-toolbar.readthedocs.io/en/1.6/installation.html
+DEBUG_TOOLBAR_PATCH_SETTINGS = False
+
 MIDDLEWARE_CLASSES += ('debug_toolbar.middleware.DebugToolbarMiddleware',)
 INSTALLED_APPS += ('debug_toolbar', )
 

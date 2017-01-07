@@ -171,11 +171,10 @@ TEMPLATES = [
 STATIC_ROOT = env('STATIC_ROOT', default=str(APP_DIR.path('static')))
 
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
-STATIC_URL = env('STATIC_URL', default='/build/')
+STATIC_URL = env('STATIC_URL', default='/static/')
 
 STATICFILES_DIRS = (
-    str(ROOT_DIR.path('build')),
-    str(APP_DIR.path('server/static')),
+    str(APP_DIR.path('static')),
 )
 
 STATICFILES_FINDERS = (
@@ -188,7 +187,7 @@ STATICFILES_FINDERS = (
 # ------------------------------------------------------------------------------
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#media-root
-MEDIA_ROOT = env('MEDIA_ROOT', default=str(APP_DIR('server/media')))
+MEDIA_ROOT = env('MEDIA_ROOT', default=str(APP_DIR('media')))
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#media-url
 MEDIA_URL = env('MEDIA_URL', default='/media/')
