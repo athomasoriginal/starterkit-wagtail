@@ -58,18 +58,10 @@ logit () {
 # Locales
 #-------------------------------------------------------------
 
-logit "Setting Ubuntu Locales"
-sudo locale-gen "en_US.UTF-8"
-sudo dpkg-reconfigure locales
-sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
-
-logit "Add locale settings to the end of /etc/environment"
-sed -e '$a\
-\
-# locale settings\
-LC_ALL=en_US.UTF-8\
-LANG=en_US.UTF-8
-' /etc/environment
+logit "Set up locales"
+sudo locale-gen en_US.UTF-8
+sudo sed -i '$ a LANGUAGE="en_US.UTF-8"' /etc/default/locale
+sudo sed -i '$ a LC_ALL="en_US.UTF-8"' /etc/default/locale
 
 #-------------------------------------------------------------
 # Update and Upgrade
@@ -180,6 +172,14 @@ python ${app_dir}/manage.py migrate
 #-------------------------------------------------------------
 # createsuperuser
 logit "creating project superuser"
-expect $repo_dir/tools/vagrant/expects/set_admin.exp ${vm_user} ${repo_name} ${repo_dir} ${django_user} {{cookiecutter.email}} ${django_pass}
+expect $repo_dir/tools/vagrant/expects/set_admin.exp ${vm_user} ${repo_name} ${app_dir} ${django_user} {{cookiecutter.email}} ${django_pass}
+
+logit "------------------------------------------------------"
 
 logit "provisioning complete"
+
+logit "To run the development environment:"
+
+logit "    vagrant ssh dev"
+
+logit "------------------------------------------------------"

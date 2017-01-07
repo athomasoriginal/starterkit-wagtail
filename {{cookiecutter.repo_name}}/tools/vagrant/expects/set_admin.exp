@@ -4,13 +4,13 @@ set timeout 10
 
 set vm_user      [lindex $argv 0]
 set repo_name    [lindex $argv 1]
-set repo_dir     [lindex $argv 2]
+set app_dir      [lindex $argv 2]
 set admin_user   [lindex $argv 3]
 set admin_email  [lindex $argv 4]
 set admin_pass   [lindex $argv 5]
 
 # spawn python $project_dir/manage.py createsuperuser
-spawn python ${repo_dir}/src/server/manage.py createsuperuser
+spawn python ${app_dir}/manage.py createsuperuser
 
 # If this is left blank, user will be root.  This is because,
 # by default, vagrant provisions as the root user.
