@@ -149,7 +149,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            str(APP_DIR('server/templates'))
+            str(APP_DIR('templates'))
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -255,7 +255,7 @@ LOGGING = {
             'level': 'ERROR',
             'class': 'logging.FileHandler',
             'class': 'logging.handlers.RotatingFileHandler',
-            'filename': LOG_DIR + '/server/django.log',
+            'filename': LOG_DIR + '/django.log',
             'maxBytes': 20 * 1024 * 1024,
             'formatter': 'verbose'
         },

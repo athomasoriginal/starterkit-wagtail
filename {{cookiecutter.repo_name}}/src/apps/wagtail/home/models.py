@@ -6,6 +6,6 @@ from config.settings.base import APP_DIR
 
 class HomePage(Page):
 
-    template = str(APP_DIR.path('server/templates/wagtail/pages/home_page.html'))
+    template = str(APP_DIR.path('templates/wagtail/pages/home_page.html'))
 
     pass

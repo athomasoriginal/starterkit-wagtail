@@ -4,6 +4,14 @@ Change Log
 
 All enhancements and patches to cookiecutter-django will be documented in this file. This project adheres to `Semantic Versioning`_.
 
+
+[2017-01-07]
+============
+
+**Changed**
+
+* vagrant box - moved from ``Ubuntu/xenial64`` to ``geerlingguy/ubuntu1604``
+
 [2016-12-29]
 ============
 
