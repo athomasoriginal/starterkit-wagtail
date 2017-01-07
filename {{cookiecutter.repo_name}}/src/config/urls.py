@@ -65,3 +65,10 @@ urlpatterns = [
         view=lambda r: HttpResponse("User-agent: *\nDisallow: /",
                                     content_type="text/plain")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# url pattern for django debug toolbar
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns += [
+        url(r'^__debug__/', include(debug_toolbar.urls)),
+    ]
