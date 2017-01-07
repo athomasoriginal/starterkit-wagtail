@@ -6,6 +6,7 @@ repo_name="{{ cookiecutter.repo_name }}"
 project_name="src"
 home_path="/home/vagrant"
 repo_dir="${home_path}/${repo_name}"
+app_dir="${repo_dir}/src"
 django_reqs="${home_path}/${repo_name}/${project_name}/requirements/dev.txt"
 virtualenv_dir="${home_path}/.virtualenvs"
 db_engine="{{cookiecutter.db_engine}}"
@@ -37,7 +38,7 @@ software=(
     "libfreetype6-dev"
     "liblcms2-dev" )
 
-log_color="\e[1;36m"
+log_color="\e[00;34m" # blue
 
 #-------------------------------------------------------------
 # UTILITIES
@@ -54,21 +55,44 @@ logit () {
 
 
 #-------------------------------------------------------------
-# INSTALL SOFTWARE
+# Locales
 #-------------------------------------------------------------
 
-# INFO: update ubuntu
+logit "Setting Ubuntu Locales"
+sudo locale-gen "en_US.UTF-8"
+sudo dpkg-reconfigure locales
+sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
+
+logit "Add locale settings to the end of /etc/environment"
+sed -e '$a\
+\
+# locale settings\
+LC_ALL=en_US.UTF-8\
+LANG=en_US.UTF-8
+' /etc/environment
+
+#-------------------------------------------------------------
+# Update and Upgrade
+#-------------------------------------------------------------
+
 logit "Updating Ubuntu"
 sudo apt-get update
 
-# install software
+logit "Upgrading Ubuntu"
+sudo apt-get upgrade
+
+
+#-------------------------------------------------------------
+# INSTALL SOFTWARE
+#-------------------------------------------------------------
+
+logit "Installing software"
 for i in "${software[@]}"
 do
    logit "Installing $i"
    sudo apt-get install -y $i
 done
 
-# INFO: install virtualenvwrapper
 logit "Installing virtualenvwrapper"
 sudo pip install virtualenvwrapper
 
@@ -76,15 +100,13 @@ sudo pip install virtualenvwrapper
 # CONFIGURE VIRTUALENVWRAPPER
 #-------------------------------------------------------------
 
-# INFO: configuring .profile
 logit "configuring .profile"
-sed -i '10i # virtualenvwrapper configuration' /home/vagrant/.profile
-sed -i '11i export WORKON_HOME=/home/vagrant/.virtualenvs' /home/vagrant/.profile
-sed -i '12i source /usr/local/bin/virtualenvwrapper.sh' /home/vagrant/.profile
+sed -i '10i # virtualenvwrapper configuration' ~/.profile
+sed -i '11i export WORKON_HOME=/home/vagrant/.virtualenvs' ~/.profile
+sed -i '12i source /usr/local/bin/virtualenvwrapper.sh' ~/.profile
 
-# INFO: relaod .profile
 logit "Reloading .profile"
-source /home/vagrant/.profile
+source ~/.profile
 
 
 {% if cookiecutter.db_engine == "postgres" -%}
@@ -92,7 +114,6 @@ source /home/vagrant/.profile
 # SETUP DATABASE
 #-------------------------------------------------------------
 
-# setup database
 logit "setting up project database"
 expect ${repo_dir}/tools/vagrant/expects/set_db.exp ${db_name} ${db_user} ${db_password} ${vm_user}
 
@@ -142,7 +163,7 @@ cat << EOF >> /home/vagrant/.bashrc
     # login to virtualenv
     workon ${repo_name}3
     # project directory
-    cd ${repo_dir}/src/server
+    cd ${app_dir}
     export PYTHONDONTWRITEBYTECODE=1
 EOF
 
@@ -152,7 +173,7 @@ cd ${repo_dir}
 
 # INFO: build initial Django DB tables
 logit "Migrating Django DB"
-python ${repo_dir}/src/server/manage.py migrate
+python ${app_dir}/manage.py migrate
 
 #-------------------------------------------------------------
 # CREATE SUPER USER

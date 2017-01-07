@@ -12,7 +12,7 @@ This branch is being actively refactored.  It will fail if you try to build and 
 Overview
 ========
 
-Wagtail Starter Kit provides you with a flexible starting point for your Django project.  Included in this template is a Django development environment provided by vagrant, a project layout based on pydanny's `cookiecutter django`_ and `Two Scoops of Django`_ and a lean set of dependencies.  The goal is to provide you with everything you need to quickly and easily start a new Django Wagtail project.
+Wagtail Starter Kit provides you with a flexible starting point for your Django wagtail project.  Included in this template is a Django/Wagtail development environment provided by vagrant, a project layout inspired by pydanny's `cookiecutter django`_ and `Two Scoops of Django`_ and a lean set of dependencies.  The goal is to provide you with everything you need to quickly and easily start a new Django Wagtail project.
 
 Wagtail Starter Kit uses a scaffolding tool called `cookiecutter`_.  Cookiecutter is similar to `Yeoman`_.  These tools are used to automatically build out entire projects instead of you having to create files manually and modify their configurations.
 
