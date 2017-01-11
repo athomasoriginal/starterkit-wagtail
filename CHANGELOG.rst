@@ -11,6 +11,7 @@ All enhancements and patches to cookiecutter-django will be documented in this f
 
 * Updated the README
 * Updated Project Features in the README
+* Logs should be working now
 
 [2017-01-07]
 ============

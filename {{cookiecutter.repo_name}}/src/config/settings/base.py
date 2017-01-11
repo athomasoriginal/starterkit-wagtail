@@ -218,7 +218,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # LOGGIN INFORMATION
 # ------------------------------------------------------------------------------
 
-LOG_DIR = env("LOG_DIR", default=str(ROOT_DIR('logs')))
+LOG_DIR = env("LOG_DIR", default=str(ROOT_DIR) + '/logs/')
 
 LOGGING = {
     'version': 1,
@@ -248,31 +248,31 @@ LOGGING = {
         'console': {
             'level': 'DEBUG',
             'class': 'logging.StreamHandler',
-            'formatter': 'verbose',
+            'formatter': 'simple',
         },
-        'file_error': {
-            'level': 'ERROR',
+        'log_file': {
+            'level': 'DEBUG',
             'class': 'logging.FileHandler',
             'class': 'logging.handlers.RotatingFileHandler',
-            'filename': LOG_DIR + '/django.log',
+            'filename': LOG_DIR + 'django.log',
             'maxBytes': 20 * 1024 * 1024,
             'formatter': 'verbose'
         },
     },
     'loggers': {
+        'apps': {
+            'handlers': ['log_file', 'console', ],
+            'propagate': True,
+            'level': 'DEBUG',
+        },
         'django.request': {
-            'handlers': ['file_error', 'mail_admins', ],
-            'level': 'ERROR',
+            'handlers': ['log_file', 'mail_admins', ],
+            'level': 'INFO',
             'propagate': True
         },
         'django.security.DisallowedHost': {
-            'level': 'ERROR',
-            'handlers': ['file_error', 'console', 'mail_admins', ],
-            'propagate': True
-        },
-        'development': {
-            'handlers': ['console', ],
-            'level': 'DEBUG',
+            'level': 'INFO',
+            'handlers': ['log_file', 'console', 'mail_admins', ],
             'propagate': True
         },
     },
