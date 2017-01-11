@@ -168,7 +168,7 @@ TEMPLATES = [
 # STATIC FILE CONFIGURATION
 # ------------------------------------------------------------------------------
 
-STATIC_ROOT = env('STATIC_ROOT', default=str(APP_DIR.path('static')))
+STATIC_ROOT = env('STATIC_ROOT', default=str(APP_DIR.path('dist')))
 
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 STATIC_URL = env('STATIC_URL', default='/static/')
