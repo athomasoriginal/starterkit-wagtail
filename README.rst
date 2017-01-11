@@ -4,11 +4,6 @@ Wagtail Starter Kit
 
 Welcome to Wagtail Starter Kit, a cookiecutter template for Django Projects.
 
-Warning
-=======
-
-This branch is being actively refactored.  It will fail if you try to build and use using the instructions listed below.
-
 Overview
 ========
 
@@ -161,5 +156,3 @@ This repo's branches correspond to the version of Django being used.  This proje
 
 .. _django roadmap: https://www.djangoproject.com/weblog/2015/jun/25/roadmap/
 .. _prompts documentation: https://github.com/tkjone/wagtail-starter-kit/blob/master/docs/prompts.rst
-
-
