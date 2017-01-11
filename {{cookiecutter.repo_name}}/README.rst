@@ -14,8 +14,6 @@ Please make sure you have the following installed on your local development envi
 * `vagrant`_
 * `virtualbox`_
 
-Click the above links to install the required packages.  When you install ``gulp``, make sure you install it globally.  Further, I also recommend installing ``node`` via `NVM`_.
-
 Quick Start
 ===========
 
@@ -39,25 +37,11 @@ With the above completed, open a new terminal window and move into the ``{{cooki
 
     django-admin runserver 0.0.0.0:8000
 
-At this point we will open up a new terminal window.  Move into the ``{{cookiecutter.repo_name}}`` root directory and run the following commands on your local, not inside your vagrant machine.
-
-**4. Install npm packages**
-
-.. code-block:: bash
-
-    npm install
-
-**5. Start the development workflow**
-
-.. code-block:: bash
-
-    gulp start
-
 .. epigraph::
 
    Did you have any problems with the above?  Please see the ``Gotchas`` section below.  If everything is okay, please continue to step 5.
 
-If things went as expected your browser should automatically open and direct you to http://localhost:3000.  Did it work?  Congratulations!  You now have your base Wagtail site configured and ready for local development.
+If things went as expected you should be able to visit http://localhost:8111 in your browser.  Did it work?  Congratulations!  You now have your base Wagtail site configured and ready for local development.
 
 For more information on this project, please head over to the docs.
 
@@ -91,7 +75,3 @@ I will look into fixing this within the provisioning script, but for the time be
 .. _node: https://nodejs.org/en/
 .. _gulp: https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md
 .. _NVM: https://github.com/creationix/nvm
-
-
-
-
