@@ -4,6 +4,8 @@ Wagtail Starter Kit
 
 Welcome to Wagtail Starter Kit, a cookiecutter template for Django Projects.
 
+**NOTE:** see development for the latest.
+
 Overview
 ========
 
@@ -148,7 +150,7 @@ There are currently two branches: `master` and `development`.
 
 `master` has not been updated in a while, but is still working.  The versions of Django and Wagtail are old though.  It also contains a front end build system.
 
-`development` reflects my latest efforts: I would recommend using that branch.  The development branch does not provide a front end build system as I do not prefer to separate them.
+`development` reflects my latest efforts: I would recommend using that branch.  The development branch does not provide a front end build system as I prefer to separate them.
 
 .. _django roadmap: https://www.djangoproject.com/weblog/2015/jun/25/roadmap/
 .. _prompts documentation: https://github.com/tkjone/wagtail-starter-kit/blob/master/docs/prompts.rst
