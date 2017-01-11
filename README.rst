@@ -2,7 +2,7 @@
 Wagtail Starter Kit
 *******************
 
-Welcome to Wagtail Starter Kit, a cookiecutter template for Django Projects.
+Welcome to Wagtail Starter Kit, a cookiecutter template for Django Wagtail Projects.
 
 Overview
 ========
