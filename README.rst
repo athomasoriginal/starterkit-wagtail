@@ -58,7 +58,7 @@ The `wagtail starter kit` provides you with the following feature set:
 
 * Vagrant development environment
 
-    This includes a 100% configured Vagrantfile with a Ubuntu 14.04 vagrant box.
+    This includes a 100% configured Vagrantfile with a Ubuntu 16.04 vagrant box.
 
 * Provisioning Scripts
 
@@ -78,13 +78,11 @@ The `wagtail starter kit` provides you with the following feature set:
 
     Are you working on a Proof of Concept and don't need a full blown database?  No worries, this project gives you the choice of sqlite or postgres and everything will be configured accordingly.
 
-* Configured Django dev setup
+* Django Test/Development tools
 
-    Providing you with some essential tools to get you up and running.  This includes:
-
-    * django-extensions
-    * django-nose
-    * coverage
+    * pytest
+    * pytest-cov
+    * pytest-sugar
     * django-debug-toolbar
 
 * Collaboration - dotfiles and documentation structure

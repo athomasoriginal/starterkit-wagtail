@@ -14,5 +14,5 @@
     "django_login_password": "createsuperuser pass",
     "domain_name": "example.com",
     "license": ["MIT", "Apache", "GPLv3", "No License" ],
-    "current_year": "2016"
+    "current_year": "2017"
 }

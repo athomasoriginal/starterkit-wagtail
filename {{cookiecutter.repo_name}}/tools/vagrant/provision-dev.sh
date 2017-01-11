@@ -114,15 +114,12 @@ expect ${repo_dir}/tools/vagrant/expects/set_db.exp ${db_name} ${db_user} ${db_p
 # CREATE VIRTUAL ENVIRONMENTS
 #-------------------------------------------------------------
 
-# INFO: initialize virtualenvironment - Python 2
 logit "Creating ${repo_name} Python 2 virtual environment"
 mkvirtualenv -r ${django_reqs} ${repo_name}2
 
-# INFO: initialize virtualenvironment - Python 3
 logit "Creating ${repo_name} Python 3 virtual environment..."
 mkvirtualenv -r ${django_reqs} --python=${python_3} ${repo_name}3
 
-# setup the python path and django_settings_module
 logit "Configuring postactivate hook for virtualenv..."
 cat << EOF >> ${virtualenv_dir}/postactivate
     # django settings
@@ -130,7 +127,6 @@ cat << EOF >> ${virtualenv_dir}/postactivate
     export DJANGO_SETTINGS_MODULE="config.settings.dev"
 EOF
 
-# remove django_settings_module when user deactivate virtualenv
 logit "Configuring postdeactivate hook for virtualenv..."
 cat << EOF >> ${virtualenv_dir}/postdeactivate
     # unset project environment variables
@@ -141,15 +137,12 @@ EOF
 # DJANGO SETUP
 #-------------------------------------------------------------
 
-# INFO: activate virtualenv
 logit "Activate virtual environment"
 source ${virtualenv_dir}/${repo_name}3/bin/activate
 
-# INFO: move into django project
 logit "Changing ${repo_name} folder"
 cd ${repo_name}
 
-# INFO: log user into virtualenv when they ssh into VM
 logit "Configuring .bashrc"
 cat << EOF >> /home/vagrant/.bashrc
     # login to virtualenv
@@ -159,11 +152,9 @@ cat << EOF >> /home/vagrant/.bashrc
     export PYTHONDONTWRITEBYTECODE=1
 EOF
 
-# INFO: move into django project
 logit "Changing to ${repo_name} directory"
 cd ${repo_dir}
 
-# INFO: build initial Django DB tables
 logit "Migrating Django DB"
 python ${app_dir}/manage.py migrate
 
