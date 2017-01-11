@@ -5,6 +5,6 @@ django-overextends
 
 {% if cookiecutter.db_engine == "postgres" -%}
 
-psycopg2>=2.6.3
+psycopg2>=2.6.2
 
 {% endif %}
