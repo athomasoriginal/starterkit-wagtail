@@ -52,15 +52,11 @@ Out of the Box
 The `wagtail starter kit` provides you with the following feature set:
 
 
-* Django 1.9.x
+* Django 1.10.x
 
-* Wagtail 1.4.x
+* Wagtail 1.8.x
 
-* React
-
-    Project is configured to use React automatically.  While React might not be your thing, and I do want to keep this project flexible, it is very easy to remove the depedency.
-
-* Vagrant Setup - Ubuntu 14.04
+* Vagrant development environment
 
     This includes a 100% configured Vagrantfile with a Ubuntu 14.04 vagrant box.
 
@@ -82,10 +78,6 @@ The `wagtail starter kit` provides you with the following feature set:
 
     Are you working on a Proof of Concept and don't need a full blown database?  No worries, this project gives you the choice of sqlite or postgres and everything will be configured accordingly.
 
-* lean project layout - HTML5 Boilerplate + Home App
-
-    This project tries to provide a lean project layout.  HTML5 boilerplate inspired base.html file.  In addition, I have included a bare bones Home app which will start you off with a wagtail page and also initialize a site for you!
-
 * Configured Django dev setup
 
     Providing you with some essential tools to get you up and running.  This includes:
@@ -94,17 +86,6 @@ The `wagtail starter kit` provides you with the following feature set:
     * django-nose
     * coverage
     * django-debug-toolbar
-
-* Complete front end build workflow
-
-    I have provided a complete front end workflow that includes
-
-    * gulp
-    * browsersync
-    * webpack
-    * tape
-    * es6 support
-    * eslint
 
 * Collaboration - dotfiles and documentation structure
 

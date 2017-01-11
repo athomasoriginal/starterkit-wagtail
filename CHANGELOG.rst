@@ -10,6 +10,7 @@ All enhancements and patches to cookiecutter-django will be documented in this f
 **Changed**
 
 * Updated the README
+* Updated Project Features in the README
 
 [2017-01-07]
 ============
