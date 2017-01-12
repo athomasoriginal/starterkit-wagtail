@@ -180,6 +180,18 @@ Contributors:
 
 10. Make a PR
 
+Tests
+=====
+
+To run tests, move into the `src` dir and run `py.test`.  Unless you have started writing more tests, you should
+see one test run and pass.
+
+
+Deploy Checklist
+================
+
+- Setup log files
+
 Git Workflow: Feature Branch Naming Conventions
 -----------------------------------------------
 
@@ -190,8 +202,3 @@ Add information about your organizations workflow below
 .. _standalone django scripts: http://www.b-list.org/weblog/2007/sep/22/standalone-django-scripts/
 .. _Extend the HomePage model: http://docs.wagtail.io/en/v1.3.1/getting_started/tutorial.html
 .. _Fail Proof Favicons: http://staticfiles.productiondjango.com/blog/failproof-favicons/
-
-Deploy Checklist
-================
-
-- Setup log files
