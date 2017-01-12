@@ -191,3 +191,7 @@ Add information about your organizations workflow below
 .. _Extend the HomePage model: http://docs.wagtail.io/en/v1.3.1/getting_started/tutorial.html
 .. _Fail Proof Favicons: http://staticfiles.productiondjango.com/blog/failproof-favicons/
 
+Deploy Checklist
+================
+
+- Setup log files
