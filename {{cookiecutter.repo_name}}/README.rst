@@ -13,37 +13,52 @@ Please make sure you have the following installed on your local development envi
 
 * `vagrant`_
 * `virtualbox`_
+* `docker`_
+* `postgres.app`
 
 Quick Start
 ===========
 
 With the above completed, open a new terminal window and move into the ``{{cookiecutter.repo_name}}`` root directory and run through the following steps.
 
-**1.  Turn your vagrant machine on (first time can take a while)**
+**1. Start Postgres.app**
+
+open the postgres.app application
+
+
+**2.  Move into your project root directory**
 
 .. code-block:: bash
 
-    vagrant up
+  cd {{cookiecutter.repo_name}}
 
-**2. Login to your VM**
 
-.. code-block:: bash
-
-    vagrant ssh
-
-**3. Turn on your Django dev server**
+**3. Create a .env file and add the following to it**
 
 .. code-block:: bash
 
-    django-admin runserver 0.0.0.0:8000
+    DJANGO_DATABASE_URL="{{cookiecutter.db_engine}}://{{cookiecutter.db_user}}:{{cookiecutter.db_password}}@{{cookiecutter.db_host}}/{{cookiecutter.db_name}}"
 
 .. epigraph::
 
-   Did you have any problems with the above?  Please see the ``Gotchas`` section below.  If everything is okay, please continue to step 5.
+   You are going to have to update the above url where it says ``localhost`` to your computers IP address.  To quickly get this,
+   run ``ipconfig getifaddr en0`` which will return something like ``192.128.3.142`` and then just replace localhost in the above DJANGO_DATABASE_URL
+   with the IP address returned in the above step like so:  DJANGO_DATABASE_URL="{{cookiecutter.db_engine}}://{{cookiecutter.db_user}}:{{cookiecutter.db_password}}@192.128.3.142/{{cookiecutter.db_name}}".
+   The reason we do this is because of the way that our process works.  We are not going to run our database in a docker container.  At the time of
+   writing this, database in containers is not best practice.  In the spirit of enforcing good practices, we will avoid using the database in a container process.
+
+
+**4.  Run docker-compose**
+
+.. code-block:: bash
+
+  docker-compose up
+
 
 If things went as expected you should be able to visit http://localhost:8111 in your browser.  Did it work?  Congratulations!  You now have your base Wagtail site configured and ready for local development.
 
 For more information on this project, please head over to the docs.
+
 
 Vagrant Environments
 ====================
@@ -75,3 +90,5 @@ I will look into fixing this within the provisioning script, but for the time be
 .. _node: https://nodejs.org/en/
 .. _gulp: https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md
 .. _NVM: https://github.com/creationix/nvm
+.. _docker: https://docs.docker.com/docker-for-mac/
+.. _postgres.app: https://postgresapp.com/

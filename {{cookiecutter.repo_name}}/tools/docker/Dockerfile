@@ -10,19 +10,23 @@ FROM python:3.6
 # fills out the author information for your image
 MAINTAINER Thomas Mattacchione
 
-# create an admin user and run the following build instructions as admin
-# guide to useradd http://www.tecmint.com/add-users-in-linux/
-RUN useradd -ms /bin/bash admin
-USER admin
-
 # environment variables
 # http://www.sudhirwarrier.com/python-unbuffered/
 ENV PYTHONUNBUFFERED 1
 
-# django app tasks
+# copy over requirements files and create a new group called admin, also
+# create a new user called admin with group admin
+# guide to useradd http://www.tecmint.com/add-users-in-linux/
 COPY ./src/requirements /requirements
-RUN pip install -r /requirements/dev.txt
+RUN pip install -r /requirements/dev.txt \
+  && groupadd -r admin \
+  && useradd -g admin -ms /bin/bash admin
+
+COPY ./tools/docker/start-dev.sh /start-dev.sh
+RUN sed -i 's/\r//' /start-dev.sh
+RUN chmod +x /start-dev.sh
+
 WORKDIR /src
 
-# initial command to run when container starts
-CMD ["./start-dev.sh"]
+# switch to admin user
+USER admin
