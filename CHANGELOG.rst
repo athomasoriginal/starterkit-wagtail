@@ -11,6 +11,11 @@ All enhancements and patches to cookiecutter-django will be documented in this f
 
 * Docker
 * Disclaimer added to README
+* Provisioning Script - Slimmed down the provisioning script.  We are now using docker to host our application
+  which means we do not need to setup install different versions of python, virtualenvwrapper, configure virtualenvwrapper,
+  Create virtualenv environments,  Setup Django, and create the superuser.   The only thing we now require is to update
+  the OS and install and configure postgres.
+* expects/set_admin.exp - this is no longer required as noted in above point
 
 [2017-01-11]
 ============
