@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  django:
+    context: .
+    dockerfile: ./Dockerfile
+  volumes:
+    - .:/code
+  command: python manage.py runserver 0.0.0.0:8000
+  user: admin
+  env_file: .env

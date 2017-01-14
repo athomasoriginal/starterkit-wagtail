@@ -4,6 +4,16 @@ Wagtail Starter Kit
 
 Welcome to Wagtail Starter Kit, a cookiecutter template for Django Wagtail Projects.
 
+NOTE:  This is under development and not ready for general use.  The goal of this branch is to explore my taditional workflow
+with a docker component.  My goal is to run a vagrant box and have docker run inside of it.  Why do this?  This feels like
+it is a step closer to parity.  Another point is that I can run my postgres database in a more similar manner to
+production.  For example, some people might use postgresapp, and others might use a dockerized postress container.  The issue
+I see, even for development, is that this promotes a bad habit (db's in docker containers) and also, its not how
+we would run it in production.  Also, if you setup your development correctly, I believe there are not too many additional
+steps for development.  So it should not hurt people too much to do this.
+
+Also note that Vagrant provides a very compatiable workflow for vagrant/docker - https://www.vagrantup.com/docs/provisioning/docker.html
+
 Overview
 ========
 
