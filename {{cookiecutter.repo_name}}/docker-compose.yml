@@ -1,11 +1,12 @@
 version: '2'
 
 services:
-  django:
-    context: .
-    dockerfile: ./Dockerfile
-  volumes:
-    - .:/code
-  command: python manage.py runserver 0.0.0.0:8000
-  user: admin
-  env_file: .env
+  wagtail:
+    build:
+      context: .
+      dockerfile: ./tools/docker/Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./src:/src
+    # env_file: .env

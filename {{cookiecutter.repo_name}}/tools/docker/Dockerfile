@@ -20,7 +20,7 @@ USER admin
 ENV PYTHONUNBUFFERED 1
 
 # django app tasks
-COPY ./requirements /requirements
+COPY ./src/requirements /requirements
 RUN pip install -r /requirements/dev.txt
 WORKDIR /src
 

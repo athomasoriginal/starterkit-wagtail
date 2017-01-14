@@ -14,6 +14,12 @@ steps for development.  So it should not hurt people too much to do this.
 
 Also note that Vagrant provides a very compatiable workflow for vagrant/docker - https://www.vagrantup.com/docs/provisioning/docker.html
 
+What were some of the issues with not using vagrant for the DB?
+
+- user now has 5 extra steps for connecting to the db - setup db, etc we can eliminate these steps with vagrant vm.
+- gets developers in the habit of thinking about the db as remote - separate from containers - promote good practices.
+
+
 Overview
 ========
 
