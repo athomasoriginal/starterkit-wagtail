@@ -33,11 +33,11 @@ open the postgres.app application
   cd {{cookiecutter.repo_name}}
 
 
-**3. Create a .env file and add the following to it**
+**3.  Build .env file**
 
 .. code-block:: bash
 
-    DJANGO_DATABASE_URL="{{cookiecutter.db_engine}}://{{cookiecutter.db_user}}:{{cookiecutter.db_password}}@{{cookiecutter.db_host}}/{{cookiecutter.db_name}}"
+  source ./tools/docker/build-env.sh
 
 .. epigraph::
 
@@ -46,6 +46,8 @@ open the postgres.app application
    with the IP address returned in the above step like so:  DJANGO_DATABASE_URL="{{cookiecutter.db_engine}}://{{cookiecutter.db_user}}:{{cookiecutter.db_password}}@192.128.3.142/{{cookiecutter.db_name}}".
    The reason we do this is because of the way that our process works.  We are not going to run our database in a docker container.  At the time of
    writing this, database in containers is not best practice.  In the spirit of enforcing good practices, we will avoid using the database in a container process.
+
+   The above is what you would normally have to do if we did not have the ``build-env.sh`` script.
 
 
 **4.  Run docker-compose**
