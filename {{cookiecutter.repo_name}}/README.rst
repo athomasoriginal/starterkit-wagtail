@@ -55,7 +55,7 @@ open the postgres.app application
   docker-compose up
 
 
-If things went as expected you should be able to visit http://localhost:8111 in your browser.  Did it work?  Congratulations!  You now have your base Wagtail site configured and ready for local development.
+If things went as expected you should be able to visit http://localhost:8000 in your browser.  Did it work?  Congratulations!  You now have your base Wagtail site configured and ready for local development.
 
 For more information on this project, please head over to the docs.
 

@@ -102,3 +102,10 @@ logit "To run the development environment:"
 logit "    vagrant ssh dev"
 
 logit "------------------------------------------------------"
+
+sed -i '1/
+hello' .env
+
+sed -i '' -e '$ a\
+hi
+' .env
