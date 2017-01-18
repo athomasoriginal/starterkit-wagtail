@@ -26,14 +26,19 @@ With the above completed, open a new terminal window and move into the ``{{cooki
 open the postgres.app application
 
 
-**2.  Move into your project root directory**
+**2.  Start Docker**
+
+Open the application
+
+
+**3.  Move into your project root directory**
 
 .. code-block:: bash
 
   cd {{cookiecutter.repo_name}}
 
 
-**3.  Build .env file**
+**4.  Build .env file**
 
 .. code-block:: bash
 
@@ -50,7 +55,7 @@ open the postgres.app application
    The above is what you would normally have to do if we did not have the ``build-env.sh`` script.
 
 
-**4.  Run docker-compose**
+**5.  Run docker-compose**
 
 .. code-block:: bash
 

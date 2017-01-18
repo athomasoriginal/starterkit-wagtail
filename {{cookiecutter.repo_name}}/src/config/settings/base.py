@@ -18,6 +18,7 @@ APP_DIR = ROOT_DIR.path('src')
 
 
 env = environ.Env()
+environ.Env.read_env('.env')
 
 # ------------------------------------------------------------------------------
 # SECRET CONFIGURATION
@@ -107,7 +108,7 @@ DEBUG = env.bool("DJANGO_DEBUG", default=True)
 {% if cookiecutter.db_engine == "postgres" -%}
 
 DATABASES = {
-    'default': env.db("DATABASE_URL", default="{{cookiecutter.db_engine}}://{{cookiecutter.db_user}}:{{cookiecutter.db_password}}@{{cookiecutter.db_host}}/{{cookiecutter.db_name}}")
+    'default': env.db("DJANGO_DATABASE_URL", default="{{cookiecutter.db_engine}}://{{cookiecutter.db_user}}:{{cookiecutter.db_password}}@{{cookiecutter.db_host}}/{{cookiecutter.db_name}}")
 }
 
 {%- else -%}
