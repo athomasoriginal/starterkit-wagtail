@@ -4,19 +4,19 @@ Wagtail Starter Kit
 
 Welcome to Wagtail Starter Kit, a cookiecutter template for Django Wagtail Projects.
 
-NOTE:  This is under development and not ready for general use.  The goal of this branch is to explore my taditional workflow
-with a docker component.  My goal is to run a vagrant box and have docker run inside of it.  Why do this?  This feels like
-it is a step closer to parity.  Another point is that I can run my postgres database in a more similar manner to
-production.  For example, some people might use postgresapp, and others might use a dockerized postress container.  The issue
-I see, even for development, is that this promotes a bad habit (db's in docker containers) and also, its not how
-we would run it in production.  Also, if you setup your development correctly, I believe there are not too many additional
-steps for development.  So it should not hurt people too much to do this.
+**NOTE:**
 
-Also note that Vagrant provides a very compatiable workflow for vagrant/docker - https://www.vagrantup.com/docs/provisioning/docker.html
+This is under active development. The current build should be stable.
 
-What were some of the issues with not using vagrant for the DB?
+This sets up this cookiecutter with a docker container v. vagrant machine.  Currently this setup requires you be on OSX and have
+Postgres.app installed.
 
-- user now has 5 extra steps for connecting to the db - setup db, etc we can eliminate these steps with vagrant vm.
+Where this is going:
+
+- To make this platform agnostic, and also more similar to production, we will eventually configure this to also use a vagrant box for the
+  DB.  From there, our container will connect to it.
+- After the above we can potentially run everything inside a vagrant box.  Right now I like this idea because it means that we are running the
+  app in an environment similar to production (linux + postgres not in a DB).  Further, we do not have to worry about the users host machine platform.
 - gets developers in the habit of thinking about the db as remote - separate from containers - promote good practices.
 
 
