@@ -18,7 +18,7 @@ APP_DIR = ROOT_DIR.path('src')
 
 
 env = environ.Env()
-environ.Env.read_env('.env')
+env.read_env('.env')
 
 # ------------------------------------------------------------------------------
 # SECRET CONFIGURATION

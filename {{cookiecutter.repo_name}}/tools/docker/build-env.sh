@@ -41,7 +41,7 @@ createFile() {
 writeEnvVariables() {
   logit "Writing .env variables"
 
-  for i in "$1[@]"
+  for i in "$1"
   do
      logit "Adding $i variable"
      echo $i >> $2
@@ -52,17 +52,27 @@ writeEnvVariables() {
 # FORM:  updateEnvVariable <varToFind> <varToReplace>
 # EXAMPLE: updateEnvVariable DJANGO_DATABASE_URL DJANGO_DATABASE_URL=updated
 # PARAMETERS:
-#   list - $1 - provide a list
-#   fileName - $2 - provide name of file to write too
+#   word to match - $1 - DJANGO_DATABASE_URL
+#   word to replace match with - $2 - provide name of file to write too
+#   file_name - $3 - file to search in
+# http://www.grymoire.com/Unix/Sed.html#uh-4a
+# https://www.safaribooksonline.com/library/view/regular-expressions-cookbook/9780596802837/ch07s16.html
 updateEnvVariable() {
-  logit "Updated $1 variable"
-  line_number=$(awk '/$1/{print NR}' .env)
-  sed -i '' "$(echo $line_number)s/.*/$(echo $2)/" .env
+  prev_word="$1"
+  next_word="$2"
+  file_name="$3"
+
+  logit "Updated $prev_word variable"
+  line_number=$(grep -n "$prev_word" "$file_name" | cut -f1 -d:)
+  new_ip_address=$(ipconfig getifaddr en0)
+
+  # replace the ip address on specific line -E seems to be OSX specific
+  sed -i '' -E "$line_number s/([0-9]{1,3}\.){3}[0-9]{1,3}/$new_ip_address/" $file_name
 }
 
 # SUMMARY:  check where the user ran this script
 # FORM:  currentWorkingDir <expectedDirName>
-# EXAMPLE: currentWorkingDir {{cookiecutter.repo_name}}
+# EXAMPLE: currentWorkingDir test.sarah
 # RETURN: return true (0) or false (1)
 currentWorkingDir() {
   full_path=$(pwd)
@@ -95,10 +105,10 @@ env_variables=(
 
 # check if file exists and if it does exist do not rewrite the file
 # just update the DJANGO_DATABASE-URL
-if [ ! -f .env ]; then
-  createFile .env
+if [ ! -f ./src/.env ]; then
+  createFile ./src/.env
 
-  writeEnvVariables ${env_variables} .env
+  writeEnvVariables ${env_variables} ./src/.env
 else
-  updateEnvVariable DJANGO_DATABASE_URL ${env_variables[1]}
+  updateEnvVariable DJANGO_DATABASE_URL ${env_variables[1]} ./src/.env
 fi
