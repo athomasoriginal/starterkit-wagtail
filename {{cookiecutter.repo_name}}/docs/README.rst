@@ -119,6 +119,15 @@ This project comes with the templates required to customize the pages for the wa
 | django superuser password | {{cookiecutter.django_login_password}} |
 +---------------------------+----------------------------------------+
 
+Under The Hood
+==============
+
+You are going to have to update the above url where it says ``localhost`` to your computers IP address.  To quickly get this,
+run ``ipconfig getifaddr en0`` which will return something like ``192.128.3.142`` and then just replace localhost in the above DJANGO_DATABASE_URL
+with the IP address returned in the above step like so:  DJANGO_DATABASE_URL="{{cookiecutter.db_engine}}://{{cookiecutter.db_user}}:{{cookiecutter.db_password}}@192.128.3.142/{{cookiecutter.db_name}}".
+The reason we do this is because of the way that our process works.  We are not going to run our database in a docker container.  At the time of
+writing this, database in containers is not best practice.  In the spirit of enforcing good practices, we will avoid using the database in a container process.
+
 
 Deploying
 =========

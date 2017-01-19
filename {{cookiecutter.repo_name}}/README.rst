@@ -4,7 +4,8 @@ Welcome to {{cookiecutter.repo_name}}
 
 welcome to **{{cookiecutter.repo_name}}**!  The following is a step-by-step guide to get this project running on your local environment.
 
-.. note:: The following has been tested on OSX and Linux.  Windows may require some additional setup.
+.. note:: The following will work on OSX.  Further, I missed this in the instructions, but for the time being you will need to manually create
+your role and database in Postgres.app.
 
 Prerequisites
 =============
@@ -14,7 +15,7 @@ Please make sure you have the following installed on your local development envi
 * `vagrant`_
 * `virtualbox`_
 * `docker`_
-* `postgres.app`
+* `postgres.app`_
 
 Quick Start
 ===========
@@ -46,13 +47,7 @@ Open the application
 
 .. epigraph::
 
-   You are going to have to update the above url where it says ``localhost`` to your computers IP address.  To quickly get this,
-   run ``ipconfig getifaddr en0`` which will return something like ``192.128.3.142`` and then just replace localhost in the above DJANGO_DATABASE_URL
-   with the IP address returned in the above step like so:  DJANGO_DATABASE_URL="{{cookiecutter.db_engine}}://{{cookiecutter.db_user}}:{{cookiecutter.db_password}}@192.128.3.142/{{cookiecutter.db_name}}".
-   The reason we do this is because of the way that our process works.  We are not going to run our database in a docker container.  At the time of
-   writing this, database in containers is not best practice.  In the spirit of enforcing good practices, we will avoid using the database in a container process.
-
-   The above is what you would normally have to do if we did not have the ``build-env.sh`` script.
+   The above generates a ``.env`` file in this projects ``src`` dir
 
 
 **5.  Run docker-compose**
