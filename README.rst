@@ -4,6 +4,10 @@ Wagtail Starter Kit
 
 Welcome to Wagtail Starter Kit, a cookiecutter template for Django Wagtail Projects.
 
+**NOTE:**
+
+For my latest iteration of this repo, please see the branch titled `dockerized`.
+
 Overview
 ========
 
