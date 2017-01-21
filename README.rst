@@ -146,9 +146,6 @@ Branches
 
 If you are running tests for this project, change into the root directory of the cookiecutter and run ``py.test``.
 
-Branches
---------
-
 This repo's branches correspond to the version of Django being used.  This project will always default to the latest version of Django and the branches will follow the `django roadmap`_.  Currently there is only a master branch and it will stay this way until the next Django release (1.10).
 
 .. _django roadmap: https://www.djangoproject.com/weblog/2015/jun/25/roadmap/
