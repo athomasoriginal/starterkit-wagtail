@@ -109,14 +109,15 @@ The `wagtail starter kit` provides you with the following feature set:
 Note on Branches
 ================
 
-Currently there are three branches:  ``master``, ``development`` and `dockerized`.  The ``master`` branch has not seen updates in about 8 months and also takes on a more traditional approach to working with wagtail.  The ``development`` branch will see many of the Django dependencies updated.  In addition, I have configured it with a more experimental approach to web development.  This means that the wagtail server will act more as an API and React will render everything on the backend.  Please see the ``CHANGELONG`` for more changes.
+Currently there are three branches:  ``master``, ``development`` and ``dockerized``.  The ``master`` branch has not seen updates in about 8 months and also takes on a more traditional approach to working with wagtail.  The ``development`` branch will see many of the Django dependencies updated.  In addition, I have configured it with a more experimental approach to web development.  This means that the wagtail server will act more as an API and React will render everything on the backend.  Please see the ``CHANGELONG`` for more changes.
+The ``dockerized`` branch takes a docker only approach to everything.  So we do not actually run the app with vagrant anymore.  Having said this, I do provide a vagrant setup which will provide the you with a postgres database should you need one.
 
 Constraints
 ===========
 
-* Vagrant setup tested on Linux and OSX
+* Docker setup tested on OSX
 
-    Project has not yet been tested on Windows OS.
+    Project has not yet been tested on Windows or Linux.
 
 * Postgres 9.5
 
