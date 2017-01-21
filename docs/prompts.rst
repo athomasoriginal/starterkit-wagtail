@@ -38,7 +38,10 @@ db_name:
     default: my_project
 
 vm_user:
-    Name of your Vagrant user.  If you did not specify, vagrant will default this to Vagrant.  This is fine, there is really no reason to change, unless you want every detail of your vagrant the same as your production server.
+    Name of your Vagrant user.  If you did not specify, vagrant will default this to ``Vagrant``.
+    This is fine, there is really no reason to change, unless you want every detail of your vagrant the same as your production server.
+
+    *Note:* Only used if you are setting up the vagrant db provided by this template.
 
     default: vagrant
 
