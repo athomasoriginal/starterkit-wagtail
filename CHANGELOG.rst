@@ -10,6 +10,8 @@ All enhancements and patches to cookiecutter-django will be documented in this f
 **Add**
 
 * Updated README
+* Standardized on postgres.  This change was made because we would really like to enforce best practices and our belief is that postgres
+  everywhere is a good thing.
 
 
 [2017-01-14]

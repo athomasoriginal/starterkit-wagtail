@@ -100,7 +100,7 @@ fi
 logit "Get hosts ip address"
 host_ip_address=$(ipconfig getifaddr en0)
 env_variables=(
-  DJANGO_DATABASE_URL={{cookiecutter.db_engine}}://{{cookiecutter.db_user}}:{{cookiecutter.db_password}}@${host_ip_address}/{{cookiecutter.db_name}}
+  DJANGO_DATABASE_URL=postgres://{{cookiecutter.db_user}}:{{cookiecutter.db_password}}@${host_ip_address}/{{cookiecutter.db_name}}
 )
 
 # check if file exists and if it does exist do not rewrite the file

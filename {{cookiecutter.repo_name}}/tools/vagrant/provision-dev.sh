@@ -7,7 +7,7 @@ project_name="src"
 home_path="/home/vagrant"
 repo_dir="${home_path}/${repo_name}"
 app_dir="${repo_dir}/src"
-db_engine="{{cookiecutter.db_engine}}"
+db_engine="postgres"
 db_user="{{cookiecutter.db_user}}"
 db_password="{{cookiecutter.db_password}}"
 db_host="{{cookiecutter.db_host}}"
@@ -15,15 +15,10 @@ db_name="{{cookiecutter.db_name}}"
 vm_user="{{cookiecutter.vm_user}}"
 software=(
     "python-pip"
-
-    {% if cookiecutter.db_engine == "postgres" -%}
-
     "expect"
     "postgresql"
     "postgresql-contrib"
     "libpq-dev"
-
-    {% endif %}
     "libjpeg-dev"
     "libtiff-dev"
     "zlib1g-dev"
@@ -78,8 +73,6 @@ do
 done
 
 
-{% if cookiecutter.db_engine == "postgres" -%}
-
 #-------------------------------------------------------------
 # SETUP DATABASE
 #-------------------------------------------------------------
@@ -87,7 +80,6 @@ done
 logit "setting up project database"
 expect ${repo_dir}/tools/vagrant/expects/set_db.exp ${db_name} ${db_user} ${db_password} ${vm_user}
 
-{% endif %}
 
 #-------------------------------------------------------------
 # COMPLETION ACTIVITIES

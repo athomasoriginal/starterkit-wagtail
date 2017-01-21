@@ -26,11 +26,6 @@ node_modules/
 # virtual environments
 .env
 
-{% if cookiecutter.db_engine == "sqlite" -%}
-# sqlite3
-/home/vagrant/{{cookiecutter.repo_name}}/db.sqlite3
-{% endif %}
-
 # python
 *.py[cod]
 *.pyc

@@ -104,23 +104,9 @@ DEBUG = env.bool("DJANGO_DEBUG", default=True)
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
-
-{% if cookiecutter.db_engine == "postgres" -%}
-
 DATABASES = {
-    'default': env.db("DJANGO_DATABASE_URL", default="{{cookiecutter.db_engine}}://{{cookiecutter.db_user}}:{{cookiecutter.db_password}}@{{cookiecutter.db_host}}/{{cookiecutter.db_name}}")
+    'default': env.db("DJANGO_DATABASE_URL", default="postgres://{{cookiecutter.db_user}}:{{cookiecutter.db_password}}@{{cookiecutter.db_host}}/{{cookiecutter.db_name}}")
 }
-
-{%- else -%}
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': str(ROOT_DIR.path('db.sqlite3')),
-    }
-}
-
-{% endif %}
 
 
 # ------------------------------------------------------------------------------

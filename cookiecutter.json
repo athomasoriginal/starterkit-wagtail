@@ -4,7 +4,6 @@
     "author_name": "Your Name",
     "email": "admin@gmail.com",
     "description": "A short description of the project.",
-    "db_engine": ["postgres", "sqlite"],
     "db_user": "dev",
     "db_password": "databasepassword",
     "db_host": "localhost",

@@ -17,11 +17,6 @@ repo_name:
 
     default: my_project
 
-db_engine:
-    Which database do you want your project to use?  Postgres and sqlite are the options you have.  The project will configure correctly with whichever you choose and you can easily reconfigure the project after it's initialized if you don't like your choice.
-
-    default: sqlite
-
 db_user:
     Name of your postgres database user.  Not used by sqlite.
 
