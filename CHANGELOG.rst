@@ -4,6 +4,14 @@ Change Log
 
 All enhancements and patches to cookiecutter-django will be documented in this file. This project adheres to `Semantic Versioning`_.
 
+[2017-01-21]
+============
+
+**Add**
+
+* Updated README
+
+
 [2017-01-14]
 ============
 

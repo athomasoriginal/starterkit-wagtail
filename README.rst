@@ -72,27 +72,25 @@ The `wagtail starter kit` provides you with the following feature set:
 
 * Wagtail 1.8.x
 
-* Vagrant development environment
+* Docker development environment
 
-    This includes a 100% configured Vagrantfile with a Ubuntu 16.04 vagrant box.
+    Run this app within a docker container.
 
-* Provisioning Scripts
+* Docker Provisioned
 
-    Shell scripts to automate the configuration of your vagrant box, setup your virtualenvironments, initialize and migrate your projects database, install Django dependencies and create project superuser.
+    Scripts to setup your environment automatically
 
-* Multiple virtualenvironments
+* Python 3.6
 
-    The provisioning scripts will provide you with two virtualenvironments.  One uses Python 2 and the other uses Python 3.  No configuration required, no changes to the Ubuntu default version of Python, just switch between one or the other using virtualenvwrapper's `workon` command
-
-    We also provide a ``dev`` environment and a ``qa`` environment out-of-the-box.  This enables a better simulation of different development flows and can be a good training tool for other developers.
+    Standardized on python 3.6
 
 * 12 Factor App
 
     Project is inspired by `12 factor app`_ which means it comes configured to use environment variables, database connection strings and other methodologies outlined in the 12 Factor manifesto.  Each one has defaults, which means you don't have to setup a `.env` or export variables to start development work.
 
-* Multiple database choices (Postgres or sqlite)
+* Postgres Everywhere
 
-    Are you working on a Proof of Concept and don't need a full blown database?  No worries, this project gives you the choice of sqlite or postgres and everything will be configured accordingly.
+    Postgres 9.5
 
 * Django Test/Development tools
 
@@ -103,7 +101,7 @@ The `wagtail starter kit` provides you with the following feature set:
 
 * Collaboration - dotfiles and documentation structure
 
-    Documentation is important, wagtail-starter-kit provides you with a basic documentation structure that and dot-files for improved collaboration.
+    Documentation is important, wagtail-starter-kit provides you with a basic documentation structure.
 
 .. _12 factor app: http://12factor.net/
 
@@ -111,7 +109,7 @@ The `wagtail starter kit` provides you with the following feature set:
 Note on Branches
 ================
 
-Currently there are two branches:  ``master`` and ``development``.  The ``master`` branch has not seen updates in about 8 months and also takes on a more traditional approach to working with wagtail.  The ``development`` branch will see many of the Django dependencies updated.  In addition, I have configured it with a more experimental approach to web development.  This means that the wagtail server will act more as an API and React will render everything on the backend.  Please see the ``CHANGELONG`` for more changes.
+Currently there are three branches:  ``master``, ``development`` and `dockerized`.  The ``master`` branch has not seen updates in about 8 months and also takes on a more traditional approach to working with wagtail.  The ``development`` branch will see many of the Django dependencies updated.  In addition, I have configured it with a more experimental approach to web development.  This means that the wagtail server will act more as an API and React will render everything on the backend.  Please see the ``CHANGELONG`` for more changes.
 
 Constraints
 ===========
@@ -120,11 +118,13 @@ Constraints
 
     Project has not yet been tested on Windows OS.
 
-* Postgres 9.0 or sqlite
+* Postgres 9.5
 
-    While you can configure this project to use other databases, I only provide configurations for Postgres and sqlite at this moment.
+    While you can configure this project to use other databases, We only provide configurations for Postgres as this is our preference.
 
-* Environment Variables (these won't work with Apache/mod_wsgi)
+* Environment Variables
+
+    We follow the .env pattern in the src directory.
 
 
 Deeper Dive
@@ -133,6 +133,7 @@ Deeper Dive
 Check out `guides django`_ for a step by step guide that explains this project in great detail.  Wagtail starter kit is built as a learning tool to help early and intermediate django developers get a better understanding, through practical application, of how to setup and configure a Django project.
 
 .. _guides django: https://github.com/tkjone/guides-django
+
 
 Contributing
 ============
