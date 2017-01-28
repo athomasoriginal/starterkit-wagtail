@@ -11,4 +11,3 @@ services:
     volumes:
       - ./src:/src
       - ./logs:/logs
-    # env_file: .env
