@@ -27,7 +27,7 @@ With the above completed, open a new terminal window and move into the ``{{cooki
 open the postgres.app application
 
 
-**2.  Start Docker**
+**2.  Start Docker for mac app**
 
 Open the application
 
@@ -50,11 +50,25 @@ Open the application
    The above generates a ``.env`` file in this projects ``src`` dir
 
 
-**5.  Run docker-compose**
+**5.  Build the docker image**
 
 .. code-block:: bash
 
-  docker-compose up
+  docker build -t cms/wagtail:v0.1 -f ./tools/docker/Dockerfile .
+
+.. epigraph::
+
+   ``docker build:``  *cms/wagtail:v0.1* is the tag for our image.  name:version
+   ``-t``: tags the image we are building - feel free to replace this with something meaningful to your project
+   ``-f``: specify the path to the Dockerfile.  If we do not specify, the ``docker build`` command is not going to find it.
+   ``.``: specify the ``build context``
+
+**5.  Run the docker image**
+
+.. code-block:: bash
+
+  docker run -p 8000:8000 --name wagtail-cms -v $(pwd)/src:/src -v $(pwd)/logs:/logs cms/wagtail:v0.1
+
 
 
 If things went as expected you should be able to visit http://localhost:8000 in your browser.  Did it work?  Congratulations!  You now have your base Wagtail site configured and ready for local development.
@@ -72,25 +86,10 @@ Gotchas
 
 .. epigraph::
 
-   I was able to start my VM, SSH into it and start my dev server, but when I tried to visit http://localhost:8111 it did not seem to work.
+   I have too many containers running?
 
-The most common reason for this is that the port is not correct.  Check to see that you are supposed to be connecting on port ``8111``.  To do this, open a new terminal window, ``cd`` into the ``{{cookiecutter.repo_name}}`` directory and run ``vagrant port``.  This will show you two lines.  The second line will tell you which port to connect to.
+   You have to clear out your local images and containers every now and again.  See this thread for a discussion:
 
-.. epigraph::
+   https://github.com/docker/docker/issues/23371
 
-   I tried to ``pip freeze`` inside of my vagrant machine and it returned ``locale.Error: unsupported locale setting``.
-
-I will look into fixing this within the provisioning script, but for the time being it can be resolved by reinstalling the language packages:
-
-.. code-block:: bash
-
-    sudo apt-get install language-pack-en-base -y && sudo locale-gen en_US en_US.UTF-8 && sudo dpkg-reconfigure locales
-
-
-.. _vagrant: https://www.vagrantup.com/downloads.html
-.. _virtualbox: https://www.virtualbox.org/
-.. _node: https://nodejs.org/en/
-.. _gulp: https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md
-.. _NVM: https://github.com/creationix/nvm
-.. _docker: https://docs.docker.com/docker-for-mac/
-.. _postgres.app: https://postgresapp.com/
+   https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes

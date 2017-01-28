@@ -6,18 +6,8 @@ Welcome to Wagtail Starter Kit, a cookiecutter template for Django Wagtail Proje
 
 **NOTE:**
 
-This is under active development. The current build should be stable.
-
-This sets up this cookiecutter with a docker container v. vagrant machine.  Currently this setup requires you be on OSX and have
-Postgres.app installed.
-
-Where this is going:
-
-- To make this platform agnostic, and also more similar to production, we will eventually configure this to also use a vagrant box for the
-  DB.  From there, our container will connect to it.
-- After the above we can potentially run everything inside a vagrant box.  Right now I like this idea because it means that we are running the
-  app in an environment similar to production (linux + postgres not in a DB).  Further, we do not have to worry about the users host machine platform.
-- gets developers in the habit of thinking about the db as remote - separate from containers - promote good practices.
+This is under active development. The current build should be stable.  Please note that this version is meant to be part of a monorepo pattern of project architecure.
+If you are looking for something more comprehensive, please see the `dockerized` branch.
 
 
 Overview

@@ -30,3 +30,5 @@ WORKDIR /src
 
 # switch to admin user
 USER admin
+
+CMD ["/start-dev.sh"]
