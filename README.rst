@@ -151,7 +151,7 @@ dockerized-monorepo
 - Wagtail App
 - Docker development environment
 
-This is the ``monorepo`` architecture.  Everything regarding the app is the same as `master` and `dockerized`.  The difference is that I have removed the ``git``, ``docker-compose`` and a few other code quality files.
+This is the ``monorepo`` architecture.  Everything regarding the app is the same as ``master`` and ``dockerized``.  The difference is that I have removed the ``git``, ``docker-compose`` and a few other code quality files.
 This has been done because now we can pop those into a monorepo and it is ready to go as an isolated app, but does not have the extras needed to be a repo on its own.
 
 Constraints
