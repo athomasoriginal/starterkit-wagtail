@@ -43,7 +43,7 @@ Quick Start
 
    .. code-block:: bash
 
-       cookiecutter https://github.com/tkjone/wagtail-starter-kit.git
+       cookiecutter https://github.com/tkjone/wagtail-starter-kit.git --checkout dockerized-monorepo
 
 You are going to be prompted to answer some questions about your project and the answers you provide will be used to build and configure your new Django Wagtail project.  These questions are called `prompts`.  If you leave a `prompt` blank, Cookiecutter will use the default answer in the square brackets.  For a list of the prompts used by this template, please see the `prompts documentation`_
 
