@@ -12,19 +12,20 @@ Prerequisites
 
 Please make sure you have the following installed on your local development environment:
 
-* `vagrant`_
-* `virtualbox`_
-* `docker`_
-* `postgres.app`_
+* vagrant
+* virtualbox
+* docker
+* postgres.app
 
 Quick Start
 ===========
 
 With the above completed, open a new terminal window and move into the ``{{cookiecutter.repo_name}}`` root directory and run through the following steps.
+Please note that while you can run this with the instructions below, it is designed to be run in a ``monorepo``.
 
 **1. Start Postgres.app**
 
-open the postgres.app application
+open the postgres.app application and setup a database for this project
 
 
 **2.  Start Docker for mac app**
