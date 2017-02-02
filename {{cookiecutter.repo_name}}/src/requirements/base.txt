@@ -3,3 +3,4 @@ django-environ>=0.4.1
 wagtail>=1.8, <1.9
 django-overextends
 psycopg2>=2.6.2
+requests>=2.13.0
