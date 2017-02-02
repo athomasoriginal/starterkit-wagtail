@@ -77,6 +77,28 @@ If things went as expected you should be able to visit http://localhost:8000 in 
 For more information on this project, please head over to the docs.
 
 
+Logging
+=======
+
+Logging is an important part of apps.  Fortunately, this is already configured for you in this template.  To start using logs, go into any
+python file inside of ``apps`` and add the following:
+
+.. code-block:: python
+
+  import logging
+
+  logger = logging.getLogger(__name__)
+
+When you want to log something in a function or a class you can use one of these calls
+
+.. code-block:: python
+
+  logger.debug("debug")
+  logger.info("info")
+  logger.warning("warning")
+  logger.error("error")
+
+
 Gotchas
 =======
 
