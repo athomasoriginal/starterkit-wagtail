@@ -58,12 +58,11 @@ writeEnvVariables() {
 # http://www.grymoire.com/Unix/Sed.html#uh-4a
 # https://www.safaribooksonline.com/library/view/regular-expressions-cookbook/9780596802837/ch07s16.html
 updateEnvVariable() {
-  prev_word="$1"
-  next_word="$2"
-  file_name="$3"
+  env_variable="$1"
+  file_name="$2"
 
-  logit "Updated $prev_word variable"
-  line_number=$(grep -n "$prev_word" "$file_name" | cut -f1 -d:)
+  logit "Updated $env_variable variable"
+  line_number=$(grep -n "$env_variable" "$file_name" | cut -f1 -d:)
   new_ip_address=$(ipconfig getifaddr en0)
 
   # replace the ip address on specific line -E seems to be OSX specific
@@ -101,6 +100,7 @@ logit "Get hosts ip address"
 host_ip_address=$(ipconfig getifaddr en0)
 env_variables=(
   DJANGO_DATABASE_URL=postgres://{{cookiecutter.db_user}}:{{cookiecutter.db_password}}@${host_ip_address}/{{cookiecutter.db_name}}
+  DJANGO_DEBUG=True
 )
 
 # check if file exists and if it does exist do not rewrite the file
