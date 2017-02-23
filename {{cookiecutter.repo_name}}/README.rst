@@ -44,7 +44,7 @@ Open the application
 
 .. code-block:: bash
 
-  source ./tools/docker/build-env.sh
+  source ./tools/docker/generate-env-file.sh
 
 .. epigraph::
 

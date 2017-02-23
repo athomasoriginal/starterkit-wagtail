@@ -1,11 +1,11 @@
 # !/bin/sh
 #
-# SCRIPT: build-env
+# SCRIPT: generate-env-file
 # AUTHOR: tkjone
 # LAST-UPDATED: Feb 11, 2017
 # PLATFORM: OSX, Linux
 #
-# USAGE: source ./build-env.sh
+# USAGE: source ./path/to/generate-env-file
 #
 # DESCRIPTION: This script will create a .env file and populate it with the required
 #              environment variables that you set inside this script.  If you already
@@ -68,8 +68,8 @@ createFile() {
 writeEnvVariables() {
   host_ip_address=$(ipconfig getifaddr en0)
   env_variables=(
-    DJANGO_DATABASE_URL=postgres://{{cookiecutter.db_user}}:{{cookiecutter.db_password}}@${host_ip_address}/{{cookiecutter.db_name}}
-    DJANGO_DEBUG=True
+    "DJANGO_DATABASE_URL=postgres://{{cookiecutter.db_user}}:{{cookiecutter.db_password}}@${host_ip_address}/{{cookiecutter.db_name}}"
+    "DJANGO_DEBUG=True"
   )
   file="$1"
 
@@ -142,5 +142,5 @@ if [ ! -f .env ]; then
 
   writeEnvVariables .env
 else
-  updateEnvVariable DJANGO_DATABASE_URL ./src/.env
+  updateEnvVariable DJANGO_DATABASE_URL .env
 fi
