@@ -1,11 +1,11 @@
 # !/bin/sh
 #
-# SCRIPT: build-env
+# SCRIPT: generate-env-file
 # AUTHOR: tkjone
 # LAST-UPDATED: Feb 11, 2017
 # PLATFORM: OSX, Linux
 #
-# USAGE: source ./build-env.sh
+# USAGE: source ./path/to/generate-env-file.sh
 #
 # DESCRIPTION: This script will create a .env file and populate it with the required
 #              environment variables that you set inside this script.  If you already
