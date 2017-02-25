@@ -8,7 +8,6 @@
     "db_password": "databasepassword",
     "db_host": "localhost",
     "db_name": "databasename",
-    "vm_user": "vagrant",
     "django_login_username": "createsuperuser name",
     "django_login_password": "createsuperuser pass",
     "domain_name": "example.com",

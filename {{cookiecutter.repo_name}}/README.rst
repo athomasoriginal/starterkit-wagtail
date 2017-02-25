@@ -4,8 +4,7 @@ Welcome to {{cookiecutter.repo_name}}
 
 welcome to **{{cookiecutter.repo_name}}**!  The following is a step-by-step guide to get this project running on your local environment.
 
-.. note:: The following will work on OSX.  Further, I missed this in the instructions, but for the time being you will need to manually create
-your role and database in Postgres.app.
+.. note:: The following will work on OSX.
 
 Prerequisites
 =============
@@ -16,6 +15,13 @@ Please make sure you have the following installed on your local development envi
 * virtualbox
 * docker
 * postgres.app
+
+Please note that this container requires a DB to connect to.  Generally, I run postgres.app on my local machine and then I tell the app to connect to it.
+The alternative, for non OSX users, is to setup a vagrant machine to host your DB.  You can also really just connect to any remote postgres db.
+Why not another docker container?  I prefer not to use docker for DB as it is not meant to persistence.  This is a preference of mine.
+
+What I am saying is that you will have to manually setup a DB.  I will provide description of this in the future, but know that id you do not have a DB setup
+locally, this will not run.
 
 Quick Start
 ===========
@@ -111,3 +117,19 @@ Gotchas
    https://github.com/docker/docker/issues/23371
 
    https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes
+
+
+.. epigraph::
+
+  I ran `docker-compose up` and I get a can't connect to db - 5432
+
+  If you have not already done so, create your .env file by running `step 4` form the quick start guide above.  If you have done this
+  and you are still running into issues please try 1.  ensure the host has a db server running on it.
+
+
+.. epigraph::
+
+  I was coding just fine at work and then I moved to another location and I get a can't connect to db - 5432 error.
+
+  If you are running your DB locally the problem is that your IP Address has changed.  This is no problem.  Just run `source ./tools/script/update_ip_addr.sh` from
+  the {{cookiecutter.repo_name}} root directory and you should be good to go.
