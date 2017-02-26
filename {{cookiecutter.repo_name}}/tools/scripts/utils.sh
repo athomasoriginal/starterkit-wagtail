@@ -112,5 +112,5 @@ updateEnvVariable() {
   next_ip_address=$(getHostIp)
 
   # replace the ip address on specific line -E seems to be OSX specific
-  sed -i '' -E "$line_number s/([0-9]{1,3}\.){3}[0-9]{1,3}/$new_ip_address/" $file_name
+  sed -i '' -E "$line_number s/([0-9]{1,3}\.){3}[0-9]{1,3}/$next_ip_address/" $file_name
 }
