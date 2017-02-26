@@ -82,6 +82,25 @@ If things went as expected you should be able to visit http://localhost:8000 in 
 
 For more information on this project, please head over to the docs.
 
+Settings
+========
+
++---------------------------+----------------------------------------+
+| Setting                   | value                                  |
++===========================+========================================+
+| database name             | {{cookiecutter.db_name}}               |
++---------------------------+----------------------------------------+
+| database username         | {{cookiecutter.db_user}}               |
++---------------------------+----------------------------------------+
+| database password         | {{cookiecutter.db_password}}           |
++---------------------------+----------------------------------------+
+| database host             | {{cookiecutter.db_host}}               |
++---------------------------+----------------------------------------+
+| django superuser name     | {{cookiecutter.django_login_username}} |
++---------------------------+----------------------------------------+
+| django superuser password | {{cookiecutter.django_login_password}} |
++---------------------------+----------------------------------------+
+
 
 Logging
 =======
