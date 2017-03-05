@@ -41,3 +41,6 @@ build
 
 # virtual environments
 /.vagrant
+
+# django
+/logs/django.log
