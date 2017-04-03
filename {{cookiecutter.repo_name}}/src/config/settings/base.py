@@ -205,7 +205,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # LOGGIN INFORMATION
 # ------------------------------------------------------------------------------
 
-LOG_DIR = env("LOG_DIR", default=str(ROOT_DIR) + 'logs/')
+LOG_DIR = env("LOG_DIR", default=str(ROOT_DIR) + '/logs/')
 
 LOGGING = {
     'version': 1,
