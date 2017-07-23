@@ -38,11 +38,30 @@ Quick Start
 
 **5.  Run wagtail**
 
-```
-docker-compose up --build
-```
+.. code-block:: bash
+
+  docker-compose up --build
+
 
 If things went as expected you should be able to visit http://localhost:8000 in your browser.  Did it work?  Congratulations!  You now have your base Wagtail site configured and ready for local development.
+
+Add Super User
+==============
+
+Run through the following steps to access the wagtail admin
+
+**1.  Attach yourself to docker container interactively**
+
+.. code-block:: bash
+
+  docker exec -it wagtail bash
+
+**2. Create super user**
+
+.. code-block:: bash
+
+  python manage.py createsuperuser
+
 
 Settings
 ========
