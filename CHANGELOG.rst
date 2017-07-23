@@ -10,6 +10,7 @@ All enhancements and patches to cookiecutter-django will be documented in this f
 **Update**
 
 * Update all core run-time dependencies in base.txt - latest Django, wagtail, requests etc
+* .env.example file - updated conflicts - they were conflicting with generate-env script
 
 [2017-01-21]
 ============
