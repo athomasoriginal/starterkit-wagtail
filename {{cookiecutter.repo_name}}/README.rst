@@ -56,7 +56,15 @@ Run through the following steps to access the wagtail admin
 
   docker exec -it wagtail bash
 
-**2. Create super user**
+
+**2.  Move into src directory**
+
+.. code-block:: bash
+
+  cd src
+
+
+**3. Create super user**
 
 .. code-block:: bash
 
