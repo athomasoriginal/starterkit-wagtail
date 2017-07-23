@@ -71,6 +71,9 @@ Run through the following steps to access the wagtail admin
   python manage.py createsuperuser
 
 
+You can now login to the wagtail admin at localhost:8000/admin
+
+
 Settings
 ========
 
