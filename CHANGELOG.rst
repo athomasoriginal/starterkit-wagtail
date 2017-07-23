@@ -4,6 +4,13 @@ Change Log
 
 All enhancements and patches to cookiecutter-django will be documented in this file. This project adheres to `Semantic Versioning`_.
 
+[2017-07-17]
+============
+
+**Update**
+
+* Update all core run-time dependencies in base.txt - latest Django, wagtail, requests etc
+
 [2017-01-21]
 ============
 
