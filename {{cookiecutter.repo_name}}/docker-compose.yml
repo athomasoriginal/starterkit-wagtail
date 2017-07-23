@@ -1,13 +1,30 @@
 version: '2'
 
 services:
+
+  db:
+    build:
+      context: .
+      dockerfile: ./tools/docker/db/Dockerfile
+    container_name: db
+    ports:
+      - "5433:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
   wagtail:
     build:
       context: .
-      dockerfile: ./tools/docker/Dockerfile
-    command: /start-dev.sh
+      dockerfile: ./tools/docker/wagtail/Dockerfile
+    command: ["./tools/docker/wagtail/start-dev.sh"]
+    container_name: wagtail
+    depends_on:
+      - db
     ports:
       - "8000:8000"
     volumes:
       - ./src:/src
       - ./logs:/logs
+
+volumes:
+  db_data: {}

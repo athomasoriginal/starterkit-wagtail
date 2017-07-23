@@ -55,5 +55,3 @@ fi
 createFile ./src/.env
 
 writeEnvVariables env.example ./src/.env
-
-updateEnvVariable DJANGO_DATABASE_URL ./src/.env
